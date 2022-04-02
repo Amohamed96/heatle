@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
+import FinalGame from "./Final/FinalGame";
 
 function GameOver() {
   const {
@@ -22,6 +23,7 @@ function GameOver() {
       {gameOver.guessedWord && (
         <h3>You guessed in {currAttempt.attempt} attempts</h3>
       )}
+      <FinalGame />
     </div>
   );
 }
