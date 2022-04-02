@@ -1,35 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
-const alphabet = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
-
 let pos = 0;
 
 function convertLetterToNumber(str) {
@@ -49,71 +20,114 @@ function Letter({ letterPos, attemptVal }) {
   const correct = correctWord.toUpperCase()[letterPos] === letter;
   const almost =
     !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
-  const veryClose =
-    !correct &&
-    letter != "" &&
-    Math.abs(
-      convertLetterToNumber(letter) -
-        convertLetterToNumber(correctWord[letterPos])
-    ) < 3;
 
-  const closer =
+  const close1 =
     !correct &&
     letter != "" &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) < 6 &&
+    ) <= 1;
+
+  const close2 =
+    !correct &&
+    letter != "" &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) <= 2 &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) > 1;
+
+  const close3 =
+    !correct &&
+    letter != "" &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) <= 3 &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) > 2;
+
+  const close4 =
+    !correct &&
+    letter != "" &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) <= 5 &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
     ) > 3;
 
-  const far =
+  const far4 =
     !correct &&
     letter != "" &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) < 9 &&
+    ) <= 7 &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) > 6;
+    ) > 5;
 
-  const notClose =
+  const far3 =
     !correct &&
     letter != "" &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) < 12 &&
+    ) <= 9 &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) > 7;
+
+  const far2 =
+    !correct &&
+    letter != "" &&
+    Math.abs(
+      convertLetterToNumber(letter) -
+        convertLetterToNumber(correctWord[letterPos])
+    ) <= 10 &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
     ) > 9;
 
-  const veryFar =
+  const far1 =
     !correct &&
     letter != "" &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) > 12;
+    ) > 11;
 
   const letterState =
     currAttempt.attempt > attemptVal &&
     (correct
       ? "correct"
-      : veryClose
-      ? "veryclose"
-      : closer
-      ? "close"
-      : notClose
-      ? "notclose"
-      : far
-      ? "far"
-      : "veryfar");
+      : close1
+      ? "close1"
+      : close2
+      ? "close2"
+      : close3
+      ? "close3"
+      : close4
+      ? "close4"
+      : far4
+      ? "far4"
+      : far3
+      ? "far3"
+      : far2
+      ? "far2"
+      : "far1");
 
   /*useEffect(() => {
     if (letter !== "" && !correct && !almost) {
