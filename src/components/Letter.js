@@ -1,7 +1,7 @@
 import React from "react";
 
 function Letter(letterPos, attemptVal) {
-  return <div>Letter</div>;
+  return <div className="letter">Letter</div>;
 }
 
 export default Letter;
