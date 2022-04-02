@@ -23,7 +23,6 @@ function GameOver() {
       {gameOver.guessedWord && (
         <h3>You guessed in {currAttempt.attempt} attempts</h3>
       )}
-      <FinalGame />
     </div>
   );
 }

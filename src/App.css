@@ -65,11 +65,27 @@ nav h1 {
 }
 
 #correct {
-  background-color: #528d4e;
+  background-color: #4bf825;
 }
 
-#almost {
-  background-color: #b49f39;
+#veryclose {
+  background-color: #8ae736;
+}
+
+#close {
+  background-color: #ecff1e;
+}
+
+#notclose {
+  background-color: #ffdc20;
+}
+
+#far {
+  background-color: #ff1e1e;
+}
+
+#veryfar {
+  background-color: #6b0000;
 }
 
 #error {
