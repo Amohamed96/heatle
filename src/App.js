@@ -4,7 +4,6 @@ import Keyboard from "./components/Keyboard";
 import { boardDefault, generateWordSet } from "./Words";
 import React, { useState, createContext, useEffect } from "react";
 import GameOver from "./components/GameOver";
-import Button from "./components/Button";
 import Navbar from "./components/Navbar";
 export const AppContext = createContext();
 
@@ -22,7 +21,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord("GAMES");
+      setCorrectWord(words.todaysWord);
     });
   }, []);
 
