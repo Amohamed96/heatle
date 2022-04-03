@@ -16,13 +16,13 @@ function Key({ keyVal, bigKey, disabled }) {
     }
   };
   return (
-    <button
+    <div
       className="key"
       id={bigKey ? "big" : disabled && "disabled"}
       onClick={selectLetter}
     >
       {keyVal}
-    </button>
+    </div>
   );
 }
 
