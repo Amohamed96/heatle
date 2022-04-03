@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord("WRONG");
+      setCorrectWord("GAMES");
     });
   }, []);
 
@@ -73,6 +73,7 @@ function App() {
     <div className="App">
       <nav>
         <img
+          class="logo"
           src="https://www.measurementsystems.co.uk/images/home/sensors-temp-icon@2x.png"
           width={"60px"}
         />
