@@ -45,6 +45,7 @@ function Navbar() {
           <img
             src="https://lh3.googleusercontent.com/pw/AM-JKLVZiI9SwHovp4uSPMHUpBZYYUsZq-PIewuxwm2efZu1TaGCD8IdFuPfj9MQhJOtedWkDc68aSAyzIHyYF5Xg-f8OhpTQ0vnQKW6tLaMt5dGxJiPOygwJ8-yeqGa5IooQ-InmUnvwfn8E3v_q6KENao=w838-h1006-no?authuser=0"
             width={"300px"}
+            alt="game"
           />
           <div class="correct">
             <a href="https://twitter.com/HeatleGame">TWITTER</a>
