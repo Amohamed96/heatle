@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #121212;
+  background-color: #2b2a2a;
   width: 100vw;
   height: 120vh;
   /* display: flex; */
@@ -41,7 +41,6 @@ nav h1 {
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
@@ -71,11 +70,11 @@ nav h1 {
 }
 
 #close1 {
-  background-color: #ff0800ad;
+  background-color: #cc230581;
 }
 
 #close2 {
-  background-color: #fa3a0081;
+  background-color: #ff0800ad;
 }
 #close3 {
   background-color: #ff7300a9;
@@ -203,11 +202,15 @@ nav h1 {
 @media only screen and (max-width: 600px) {
   .App {
     text-align: center;
-    background-color: #121212;
+    background-color: #2b2a2a;
     width: 120vw;
     height: 120vh;
     /* display: flex; */
     color: white;
+  }
+  .logo {
+    padding-top: 10px;
+    width: 15rem;
   }
 
   body {
@@ -245,7 +248,6 @@ nav h1 {
   .board {
     width: 390px;
     height: 490px;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
   }
@@ -394,5 +396,5 @@ img {
 
 .logo {
   padding-top: 10px;
-  width: 5rem;
+  width: 20rem;
 }

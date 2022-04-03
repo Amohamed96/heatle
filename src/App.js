@@ -71,13 +71,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <img
-          class="logo"
-          src="https://www.measurementsystems.co.uk/images/home/sensors-temp-icon@2x.png"
-          width={"60px"}
-          alt="logo"
-        />
-        <h1>Heatle</h1>
+        <img class="logo" src="images/logo.png" alt="logo" />
       </nav>
       <Navbar />
       <AppContext.Provider
