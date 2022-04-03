@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord("KAIDO");
+      setCorrectWord("PULSE");
     });
   }, []);
 
