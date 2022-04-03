@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Signika");
 
 $light: rgba(165, 11, 11, 0.486);
-$dark: #00000056;
-$col1: #000000;
-$col2: #000000;
-$col3: #000000;
+$dark: #000000a2;
+$col1: #000000af;
+$col2: #000000a9;
+$col3: #000000a6;
 
 $time: 500ms;
 $cubic: cubic-bezier(0.06, 0.63, 0.91, 0.66);
@@ -81,7 +81,7 @@ a {
     &::before {
       left: calc(25vw - 1em);
       transform: scale(1);
-      visibility: visible;
+      visibility: hidden;
       opacity: 1;
 
       @media (max-width: 576px) {
@@ -115,7 +115,7 @@ article {
   padding: ($size * 10) ($size * 4) $size;
   transition: all $time / 2 $cubic;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   #check {
     display: none;
 
@@ -202,18 +202,14 @@ article {
 }
 aside {
   position: absolute;
-  width: 14rem;
-  height: 100%;
+  width: 28rem;
+  height: 113%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   background-image: linear-gradient(45deg, $col3, $col2);
   transform: translateX(-100%);
-
-  @media (max-width: 576px) {
-    width: 100vn;
-  }
 }
 
 article {
@@ -241,34 +237,34 @@ article {
   }
 }
 .correct {
-  background-color: #4bf825;
+  background-color: #4cf825e5;
 }
 
 .close1 {
-  background-color: #ff0800ad;
+  background-color: #941a05c9;
 }
 
 .close2 {
-  background-color: #fa3a0081;
+  background-color: #f74324ad;
 }
 .close3 {
-  background-color: #ff7300a9;
+  background-color: #ff9900cc;
 }
 .close4 {
-  background-color: #ffae00ad;
+  background-color: #faf60cd3;
 }
 
 .far4 {
-  background-color: #f6fa00af;
+  background-color: #00ffaad2;
 }
 .far3 {
-  background-color: #00f8eca6;
+  background-color: #00f8ecce;
 }
 .far2 {
-  background-color: #00c3ffa9;
+  background-color: #00c3ffd3;
 }
 .far1 {
-  background-color: #0011fdad;
+  background-color: #0011fdd3;
 }
 
 img {

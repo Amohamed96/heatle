@@ -66,34 +66,34 @@ nav h1 {
 }
 
 #correct {
-  background-color: #4bf825;
+  background-color: #4cf825d5;
 }
 
 #close1 {
-  background-color: #cc230581;
+  background-color: #cc2305c9;
 }
 
 #close2 {
   background-color: #ff0800ad;
 }
 #close3 {
-  background-color: #ff7300a9;
+  background-color: #ff7300cc;
 }
 #close4 {
-  background-color: #ffae00ad;
+  background-color: #ffae00cb;
 }
 
 #far4 {
-  background-color: #f6fa00af;
+  background-color: #f6fa00d2;
 }
 #far3 {
-  background-color: #00f8eca6;
+  background-color: #00f8ecce;
 }
 #far2 {
-  background-color: #00c3ffa9;
+  background-color: #00c3ffd3;
 }
 #far1 {
-  background-color: #0011fdad;
+  background-color: #0011fdd3;
 }
 
 #error {
@@ -151,34 +151,34 @@ nav h1 {
 }
 
 #correct {
-  background-color: #4bf825;
+  background-color: #4cf825e5;
 }
 
 #close1 {
-  background-color: #ff0800ad;
+  background-color: #941a05c9;
 }
 
 #close2 {
-  background-color: #fa3a0081;
+  background-color: #f74324ad;
 }
 #close3 {
-  background-color: #ff7300a9;
+  background-color: #ff9900cc;
 }
 #close4 {
-  background-color: #ffae00ad;
+  background-color: #faf60cd3;
 }
 
 #far4 {
-  background-color: #f6fa00af;
+  background-color: #00ffaad2;
 }
 #far3 {
-  background-color: #00f8eca6;
+  background-color: #00f8ecce;
 }
 #far2 {
-  background-color: #00c3ffa9;
+  background-color: #00c3ffd3;
 }
 #far1 {
-  background-color: #0011fdad;
+  background-color: #0011fdd3;
 }
 
 /*
@@ -235,6 +235,9 @@ nav h1 {
     color: white;
     font-size: 45px;
   }
+  .nav h1:before {
+    content: "BETA";
+  }
   .game {
     width: 100vw;
     height: calc(100vh - 170px);
@@ -273,34 +276,34 @@ nav h1 {
   }
 
   #correct {
-    background-color: #4bf825;
+    background-color: #4cf825e5;
   }
 
   #close1 {
-    background-color: #ff0800ad;
+    background-color: #941a05c9;
   }
 
   #close2 {
-    background-color: #fa3a0081;
+    background-color: #f74324ad;
   }
   #close3 {
-    background-color: #ff7300a9;
+    background-color: #ff9900cc;
   }
   #close4 {
-    background-color: #ffae00ad;
+    background-color: #faf60cd3;
   }
 
   #far4 {
-    background-color: #f6fa00af;
+    background-color: #00ffaad2;
   }
   #far3 {
-    background-color: #00f8eca6;
+    background-color: #00f8ecce;
   }
   #far2 {
-    background-color: #00c3ffa9;
+    background-color: #00c3ffd3;
   }
   #far1 {
-    background-color: #0011fdad;
+    background-color: #0011fdd3;
   }
 
   #error {
@@ -308,6 +311,7 @@ nav h1 {
   }
 
   .keyboard {
+    object-fit: contain;
     width: 30rem;
     height: 1rem;
     margin-top: 1rem;
