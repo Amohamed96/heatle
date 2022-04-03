@@ -59,25 +59,37 @@ function Letter({ letterPos, attemptVal }) {
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) <= 5 &&
+    ) <= 6 &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
     ) > 3;
 
-  const far4 =
-    !correct &&
-    letter != "" &&
-    Math.abs(
-      convertLetterToNumber(letter) -
-        convertLetterToNumber(correctWord[letterPos])
-    ) <= 7 &&
-    Math.abs(
-      convertLetterToNumber(letter) -
-        convertLetterToNumber(correctWord[letterPos])
-    ) > 5;
+  // const far4 =
+  //   !correct &&
+  //   letter != "" &&
+  //   Math.abs(
+  //     convertLetterToNumber(letter) -
+  //       convertLetterToNumber(correctWord[letterPos])
+  //   ) <= 7 &&
+  //   Math.abs(
+  //     convertLetterToNumber(letter) -
+  //       convertLetterToNumber(correctWord[letterPos])
+  //   ) > 5;
 
-  const far3 =
+  // const far3 =
+  //   !correct &&
+  //   letter != "" &&
+  //   Math.abs(
+  //     convertLetterToNumber(letter) -
+  //       convertLetterToNumber(correctWord[letterPos])
+  //   ) <= 9 &&
+  //   Math.abs(
+  //     convertLetterToNumber(letter) -
+  //       convertLetterToNumber(correctWord[letterPos])
+  //   ) > 7;
+
+  const far2 =
     !correct &&
     letter != "" &&
     Math.abs(
@@ -89,25 +101,13 @@ function Letter({ letterPos, attemptVal }) {
         convertLetterToNumber(correctWord[letterPos])
     ) > 7;
 
-  const far2 =
-    !correct &&
-    letter != "" &&
-    Math.abs(
-      convertLetterToNumber(letter) -
-        convertLetterToNumber(correctWord[letterPos])
-    ) <= 10 &&
-    Math.abs(
-      convertLetterToNumber(letter) -
-        convertLetterToNumber(correctWord[letterPos])
-    ) > 9;
-
   const far1 =
     !correct &&
     letter != "" &&
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(correctWord[letterPos])
-    ) > 11;
+    ) > 10;
 
   const letterState =
     currAttempt.attempt > attemptVal &&
@@ -121,11 +121,11 @@ function Letter({ letterPos, attemptVal }) {
       ? "close3"
       : close4
       ? "close4"
-      : far4
-      ? "far4"
-      : far3
-      ? "far3"
-      : far2
+      : // : far4
+      // ? "far4"
+      // : far3
+      // ? "far3"
+      far2
       ? "far2"
       : "far1");
 

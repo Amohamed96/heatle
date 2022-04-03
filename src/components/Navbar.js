@@ -22,6 +22,7 @@ function Navbar() {
             stroke-linecap="round"
           ></path>
         </svg>
+        <div class="guide">GUIDE</div>
       </label>
       <aside>
         <div class="top">
@@ -36,11 +37,11 @@ function Navbar() {
             <div class="close1"> Burning: 1 letter</div>
             <div class="close2"> Very Warm: 2 letters </div>
             <div class="close3"> Warm: 3 letters </div>
-            <div class="close4"> Chilly: 5 letters </div>
-            <div class="far4"> Wear A Sweater: 7 letters </div>
-            <div class="far3"> Cold: 9 letters </div>
-            <div class="far2"> Very Cold: 10 letters </div>
-            <div class="far1"> Freezing: 11+ letters </div>
+            <div class="close4"> Chilly: 4-6 letters </div>
+            {/* <div class="far4"> Wear A Sweater: 7 letters </div>
+            <div class="far3"> Cold: 9 letters </div> */}
+            <div class="far2"> Very Cold: 7-9 letters </div>
+            <div class="far1"> Freezing: 10+ letters </div>
           </div>
           <img
             src="https://lh3.googleusercontent.com/pw/AM-JKLVZiI9SwHovp4uSPMHUpBZYYUsZq-PIewuxwm2efZu1TaGCD8IdFuPfj9MQhJOtedWkDc68aSAyzIHyYF5Xg-f8OhpTQ0vnQKW6tLaMt5dGxJiPOygwJ8-yeqGa5IooQ-InmUnvwfn8E3v_q6KENao=w838-h1006-no?authuser=0"

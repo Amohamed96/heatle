@@ -128,6 +128,7 @@ article {
       align-items: center;
       cursor: pointer;
       padding-top: 4rem;
+      flex-direction: column;
 
       &::before {
         position: absolute;

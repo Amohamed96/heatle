@@ -5,6 +5,7 @@
   height: 120vh;
   /* display: flex; */
   color: white;
+  zoom: 100%;
 }
 
 body {
@@ -63,37 +64,6 @@ nav h1 {
   font-weight: bolder;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-#correct {
-  background-color: #4cf825d5;
-}
-
-#close1 {
-  background-color: #cc2305c9;
-}
-
-#close2 {
-  background-color: #ff0800ad;
-}
-#close3 {
-  background-color: #ff7300cc;
-}
-#close4 {
-  background-color: #ffae00cb;
-}
-
-#far4 {
-  background-color: #f6fa00d2;
-}
-#far3 {
-  background-color: #00f8ecce;
-}
-#far2 {
-  background-color: #00c3ffd3;
-}
-#far1 {
-  background-color: #0011fdd3;
 }
 
 #error {
@@ -167,15 +137,15 @@ nav h1 {
 #close4 {
   background-color: #faf60cd3;
 }
-
+/* 
 #far4 {
   background-color: #00ffaad2;
 }
 #far3 {
   background-color: #00f8ecce;
-}
+} */
 #far2 {
-  background-color: #00c3ffd3;
+  background-color: #0e6bf7d3;
 }
 #far1 {
   background-color: #0011fdd3;
@@ -207,6 +177,7 @@ nav h1 {
     height: 120vh;
     /* display: flex; */
     color: white;
+    zoom: 85%;
   }
   .logo {
     padding-top: 10px;
@@ -235,9 +206,7 @@ nav h1 {
     color: white;
     font-size: 45px;
   }
-  .nav h1:before {
-    content: "BETA";
-  }
+
   .game {
     width: 100vw;
     height: calc(100vh - 170px);
@@ -292,15 +261,15 @@ nav h1 {
   #close4 {
     background-color: #faf60cd3;
   }
-
-  #far4 {
-    background-color: #00ffaad2;
-  }
-  #far3 {
-    background-color: #00f8ecce;
-  }
+  /* 
+#far4 {
+  background-color: #00ffaad2;
+}
+#far3 {
+  background-color: #00f8ecce;
+} */
   #far2 {
-    background-color: #00c3ffd3;
+    background-color: #0e6bf7d3;
   }
   #far1 {
     background-color: #0011fdd3;
@@ -359,37 +328,6 @@ nav h1 {
   }
   #disabled {
     background-color: #3a393c;
-  }
-
-  #correct {
-    background-color: #4bf825;
-  }
-
-  #close1 {
-    background-color: #720502ad;
-  }
-
-  #close2 {
-    background-color: #f5181881;
-  }
-  #close3 {
-    background-color: #ff7300a9;
-  }
-  #close4 {
-    background-color: #ffae00ad;
-  }
-
-  #far4 {
-    background-color: #f6fa00af;
-  }
-  #far3 {
-    background-color: #00f8eca6;
-  }
-  #far2 {
-    background-color: #00c3ffa9;
-  }
-  #far1 {
-    background-color: #0011fdad;
   }
 }
 
