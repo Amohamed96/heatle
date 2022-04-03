@@ -27,9 +27,9 @@ function Navbar() {
       <aside>
         <div class="top">
           <p>
-            Too hot? Or too cold? Test your puzzle solving skills by finding the
-            5 letter word. The color will indicate how close your guess is to
-            the solution. Ex: A is not close Z so A will be dark blue.
+            Solve this puzzle by tackling the solution letter by letter. Each
+            letter in your guess will give you a clue as to how close it is to
+            the solution. For example
           </p>
           <div>
             <h3>Color Guide (How many letters away)</h3>
