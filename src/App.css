@@ -2,7 +2,7 @@
   text-align: center;
   background-color: #121212;
   width: 100vw;
-  height: 110vh;
+  height: 120vh;
   /* display: flex; */
   color: white;
 }
@@ -20,6 +20,7 @@ nav {
   flex-direction: row;
   place-items: center;
   justify-content: center;
+  padding-top: 1rem;
 }
 
 nav h1 {
@@ -222,6 +223,7 @@ nav h1 {
     flex-direction: row;
     place-items: center;
     justify-content: center;
+    padding-top: 6rem;
   }
 
   nav h1 {
