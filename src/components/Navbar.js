@@ -22,7 +22,7 @@ function Navbar() {
             stroke-linecap="round"
           ></path>
         </svg>
-        Click me
+        Guide
       </label>
       <aside>
         <div class="top">

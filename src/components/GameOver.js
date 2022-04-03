@@ -15,12 +15,12 @@ function GameOver() {
     <div className="gameOver">
       <h3>
         {gameOver.guessedWord
-          ? "You Correctly Guessed the Healtle"
-          : "You Failed to Guess the Heatle"}
+          ? "YOU CORRECTLY GUESSED THE HEATLE"
+          : "YOU FAILED TO GUESS THE HEATLE"}
       </h3>
-      <h1>Correct Word: {correctWord}</h1>
+      <h1>CORRECT WORD: {correctWord}</h1>
       {gameOver.guessedWord && (
-        <h3>You guessed in {currAttempt.attempt} attempts</h3>
+        <h3>YOU GUESSED IN {currAttempt.attempt} ATTEMPTS!</h3>
       )}
     </div>
   );
