@@ -67,7 +67,7 @@ svg.cursor-pointer:hover {
 }
 
 .navbar {
-  margin-bottom: 2%;
+  margin-bottom: 10%;
 }
 
 .navbar-content {
@@ -188,4 +188,11 @@ svg.cursor-pointer:hover {
   100% {
     transform: translate(0, 0);
   }
+}
+
+img {
+  padding-top: 4rem;
+  padding-left: 1.5rem;
+  max-width: 50%;
+  height: auto;
 }

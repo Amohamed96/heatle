@@ -132,7 +132,7 @@ export const getGuessStatuses = (guess: string): CharStatus[] => {
     Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(splitSolution[i])
-    ) > 10 && Math.abs(
+    ) >= 10 && Math.abs(
       convertLetterToNumber(letter) -
         convertLetterToNumber(splitSolution[i])
     ) != 0) {
