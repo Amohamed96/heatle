@@ -321,6 +321,9 @@ nav h1 {
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
   }
+  .key.disable-dbl-tap-zoom {
+    touch-action: manipulation;
+  }
 
   #big {
     width: 100px;

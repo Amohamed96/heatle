@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
+import "../App.css";
 
 function Key({ keyVal, bigKey, disabled }) {
   const { gameOver, onSelectLetter, onDelete, onEnter } =
@@ -16,13 +17,13 @@ function Key({ keyVal, bigKey, disabled }) {
     }
   };
   return (
-    <div
-      className="key"
+    <button
+      class="key"
       id={bigKey ? "big" : disabled && "disabled"}
       onClick={selectLetter}
     >
       {keyVal}
-    </div>
+    </button>
   );
 }
 
