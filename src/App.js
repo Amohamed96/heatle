@@ -5,7 +5,7 @@ import { boardDefault, generateWordSet } from "./Words";
 import React, { useState, createContext, useEffect } from "react";
 import GameOver from "./components/GameOver";
 import Navbar from "./components/Navbar";
-import KeyboardNew from "./components/KeyboardNew";
+import KeyboardNew from "./Overhaul/KeyboardNew";
 export const AppContext = createContext();
 
 function App() {
@@ -92,7 +92,7 @@ function App() {
       >
         <div className="game">
           <Board />
-          {gameOver.gameOver ? <GameOver /> : <KeyboardNew />}
+          {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
     </div>
