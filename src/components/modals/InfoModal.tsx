@@ -145,13 +145,37 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="4|5"
+          value="4"
           status="close4"
-        />               
+        />   
+              <Cell
+          isRevealing={true}
+          isCompleted={true}
+          value="5"
+          status="close4"
+        />              
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="6|9"
+          value="6"
+          status="far2"
+        />
+         <Cell
+          isRevealing={true}
+          isCompleted={true}
+          value="7"
+          status="far2"
+        />
+        <Cell
+          isRevealing={true}
+          isCompleted={true}
+          value="8"
+          status="far2"
+        />
+        <Cell
+          isRevealing={true}
+          isCompleted={true}
+          value="9"
           status="far2"
         />
          <Cell

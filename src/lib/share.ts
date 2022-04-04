@@ -53,10 +53,20 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
           switch (status[i]) {
             case 'correct':
               return tiles[0]
-            case 'here':
+            case 'close1':
               return tiles[1]
-            default:
+            case 'close2':
               return tiles[2]
+            case 'close3':
+              return tiles[3]
+            case 'close4':
+              return tiles[4]
+            case 'far2':
+              return tiles[5]
+            case 'far1':
+              return tiles[6]
+            default:
+              return tiles[7]
           }
         })
         .join('')
@@ -77,8 +87,13 @@ const attemptShare = (shareData: object) => {
 
 const getEmojiTiles = (isDarkMode: boolean, isHighContrastMode: boolean) => {
   let tiles: string[] = []
-  tiles.push(isHighContrastMode ? '🟧' : '🟩')
-  tiles.push(isHighContrastMode ? '🟦' : '🟨')
+  tiles.push(isHighContrastMode ? '✅' : '🟩')
+  tiles.push(isHighContrastMode ? '1️⃣' : '🟥')
+  tiles.push(isHighContrastMode ? '2️⃣' : '🟥')
+  tiles.push(isHighContrastMode ? '3️⃣' : '🟧')
+  tiles.push(isHighContrastMode ? '5️⃣' : '🟨')
+  tiles.push(isHighContrastMode ? '7️⃣' : '🟦')
+  tiles.push(isHighContrastMode ? '🔟' : '🟦')
   tiles.push(isDarkMode ? '⬛' : '⬜')
   return tiles
 }
