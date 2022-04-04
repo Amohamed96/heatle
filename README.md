@@ -1,5 +1,5 @@
-# HEATLE
+# React Wordle
 
-### A wordle clone where users have 6 guesses to find the correct word but with a twist!. The only clues you will recieve is how hot or cold (far or close) your guess was from the actual word.
+Heatle is a Wordle-Like game where a player has 6 guesses to get the correct word, exept with a twist! The only hint that the player gets after a wrong guess is how close the letter is to the correct one for that particular spot Made using React, Typescript, and Tailwind.
 
-### Link to website: https://heatlegame.com
+[**Try out the demo!**](https://heatlegame.com/)
