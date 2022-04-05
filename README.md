@@ -1,4 +1,4 @@
-!["Logo"](https://github.com/Amohamed96/heatle/blob/master/public/logo512.png?raw=true)
+!["Logo"](https://github.com/Amohamed96/heatle/blob/master/client/public/logo512.png?raw=true)
 
 # HEATLE
 
@@ -14,4 +14,4 @@ Clone the repository and perform the following command line actions:
 
 `$> cd heatle $> npm install $> npm run start`
 
-!["Mobile view"](<https://github.com/Amohamed96/heatle/blob/master/public/images/Untitled%20design%20(10).png?raw=true>)
+!["Mobile view"](<https://github.com/Amohamed96/heatle/blob/master/client/public/images/Untitled%20design%20(10).png?raw=true>)
