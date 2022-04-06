@@ -259,13 +259,31 @@ function App() {
       }
     }
   }
+//   if (isGameWon || isGameLost) {
+//     if (guesses.length >= 1) {
+//     axios.post("/api/stats", statistic).then((result) => {
+//     setStatistics({ ...statistic, heatmap: heatmap, attempts: guesses.length});
+//   });
+//     }
+// }
   useEffect(() => {
-  if (isGameWon || isGameLost && guesses.length > 0) {
-    axios.post("/api/stats", statistic).then((result) => {
-    setStatistics({ ...statistic, heatmap: heatmap, attempts: guesses.length});
+    if (isGameWon || isGameLost) {
+axios.post('/api/stats', {
+    heatmap: heatmap,
+    attempts: guesses.length
+  })
+  .then(function (response) {
+    console.log("RESPONSE", response);
+  })
+  .catch(function (error) {
+    console.log(error);
   });
-}
-  }, [heatmap])
+    }
+  }, [solution])
+
+  console.log("SOLUTION", solution)
+  console.log("IS GAME WON", isGameWon)
+  console.log("ATTEMPTS", guesses.length)
 
   return (
     <div className="h-screen flex flex-col">
