@@ -65,7 +65,7 @@ export const StatsModal = ({
         numberOfGuessesMade={numberOfGuessesMade}
       />
       {(isGameLost || isGameWon) && (
-        <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
+        <div className="mt-5 sm:mt-6 columns-2 dark:text-white" style={{display: "grid"}}>
           <div>
             <h5>{NEW_WORD_TEXT}</h5>
             <Countdown
@@ -88,8 +88,14 @@ export const StatsModal = ({
               )
             }}
           >
-            {SHARE_TEXT}
+            Copy Game
           </button>
+          &nbsp;
+           <div>Share your results with us on </div><a  type="button"
+            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+            href='https://twitter.com/HeatleGame' style={{background: "blue", opacity:2}}>Twitter</a><a   type="button"
+            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+           href='https://www.instagram.com/playheatle/' style={{background: "pink", color: "black"}}>Instagram</a>
         </div>
       )}
     </BaseModal>

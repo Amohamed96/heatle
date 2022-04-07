@@ -31,9 +31,7 @@ export const Cell = ({
       'border-black dark:border-slate-100': value && !status,
       'absent shadowed bg-slate-400 dark:bg-slate-700 text-white border-slate-400 dark:border-slate-700':
         status === 'absent',
-      'correct shadowed bg-orange-500 text-white border-orange-500':
-        status === 'correct' && isHighContrast,
-      'present shadowed bg-cyan-500 text-white border-cyan-500':
+      'correct shadowed bg-green-500 text-white border-white-500':
         status === 'correct' && isHighContrast,
       'correct shadowed bg-green-500 text-white border-green-500':
         status === 'correct' && !isHighContrast,
@@ -61,9 +59,9 @@ export const Cell = ({
         status === 'far1' && isHighContrast,
       'far1 shadowed bg-blue-500 text-white border-blue-500':
         status === 'far1' && !isHighContrast,
-      'far2 shadowed bg-cyan-500 text-white border-white-500':
+      'far2 shadowed bg-cyan-300 text-white border-white-500':
         status === 'far2' && isHighContrast,
-      'far2 shadowed bg-cyan-500 text-white border-cyan-500':
+      'far2 shadowed bg-cyan-300 text-white border-cyan-500':
         status === 'far2' && !isHighContrast,
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
