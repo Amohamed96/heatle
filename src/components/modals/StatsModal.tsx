@@ -88,14 +88,16 @@ export const StatsModal = ({
               )
             }}
           >
-            Copy Game
+            Share your results!
           </button>
           &nbsp;
-           <div>Share your results with us on </div><a  type="button"
+           <div>Follow us on Twitter </div><a  type="button"
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-            href='https://twitter.com/HeatleGame' style={{background: "blue", opacity:2}}>Twitter</a><a   type="button"
+            href='https://twitter.com/HeatleGame' style={{background: "blue", opacity:2}}>Twitter</a>
+            
+            {/* <a   type="button"
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-           href='https://www.instagram.com/playheatle/' style={{background: "pink", color: "black"}}>Instagram</a>
+           href='https://www.instagram.com/playheatle/' style={{background: "pink", color: "black"}}>Instagram</a> */}
         </div>
       )}
     </BaseModal>
