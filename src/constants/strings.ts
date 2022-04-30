@@ -11,6 +11,8 @@ export const HARD_MODE_DESCRIPTION =
 export const HIGH_CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `The word was ${solution}`
+export const CORRECT_WORD_MESSAGE_UNLIMITED = (solutionUL: string) =>
+  `The word was ${solutionUL}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>

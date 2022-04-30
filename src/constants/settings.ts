@@ -1,6 +1,9 @@
 import { solution } from '../lib/words'
+import { solutionUL } from '../lib/wordsUnlimited'
 
 export const MAX_WORD_LENGTH = solution.length
+export const MAX_WORD_LENGTH_UL = solutionUL.length
+
 export const MAX_CHALLENGES = 6
 export const ALERT_TIME_MS = 2000
 export const REVEAL_TIME_MS = 350

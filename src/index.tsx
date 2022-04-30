@@ -4,13 +4,17 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { AlertProvider } from './context/AlertContext'
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
     <AlertProvider>
       <App />
     </AlertProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </BrowserRouter>,
+
   document.getElementById('root')
 )
 

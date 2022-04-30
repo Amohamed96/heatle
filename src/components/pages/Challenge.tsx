@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
-import { Grid } from './components/grid/Grid'
-import { Keyboard } from './components/keyboard/Keyboard'
-import { InfoModal } from './components/modals/InfoModal'
-import { StatsModal } from './components/modals/StatsModal'
-import { SettingsModal } from './components/modals/SettingsModal'
+import React from "react";
+import { useState, useEffect } from "react";
+import { Grid } from "../grid/Grid";
+import { Keyboard } from "../keyboard/Keyboard";
+import { InfoModal } from "../modals/InfoModal";
+import { StatsModal } from "../modals/StatsModal";
+import { SettingsModal } from "../modals/SettingsModal";
 import axios from "axios";
-import { generateEmojiGrid , getEmojiTiles} from '../src/lib/share'
+import { generateEmojiGrid , getEmojiTiles} from '../../lib/share'
+import { Link } from "react-router-dom";
 
 import {
   WIN_MESSAGES,
@@ -14,36 +16,38 @@ import {
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
   HARD_MODE_ALERT_MESSAGE,
-} from './constants/strings'
+} from "../../constants/strings";
 import {
   MAX_WORD_LENGTH,
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
   GAME_LOST_INFO_DELAY,
   WELCOME_INFO_MODAL_MS,
-} from './constants/settings'
+} from "../../constants/settings";
 import {
   isWordInWordList,
   isWinningWord,
   solution,
   findFirstUnusedReveal,
   unicodeLength,
-} from './lib/words'
-import { addStatsForCompletedGame, loadStats } from './lib/stats'
+} from "../../lib/words";
+import {
+  solutionUL
+} from "../../lib/wordsUnlimited";
+import { addStatsForCompletedGame, loadStats } from "../../lib/stats";
 import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
   setStoredIsHighContrastMode,
   getStoredIsHighContrastMode,
-} from './lib/localStorage'
-import { default as GraphemeSplitter } from 'grapheme-splitter'
+} from "../../lib/localStorage";
+import { default as GraphemeSplitter } from "grapheme-splitter";
 
-import './App.css'
-import { AlertContainer } from './components/alerts/AlertContainer'
-import { useAlert } from './context/AlertContext'
-import { Navbar } from './components/navbar/Navbar'
-
-function App() {
+import "../../App.css";
+import { AlertContainer } from "../alerts/AlertContainer";
+import { useAlert } from "../../context/AlertContext";
+import { Navbar } from "../navbar/Navbar";
+function Home() {
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches
@@ -87,7 +91,7 @@ function App() {
     return loaded.guesses
   })
 
-  const [stats, setStats] = useState(() => loadStats())
+  // const [stats, setStats] = useState(() => loadStats())
 
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
@@ -143,7 +147,7 @@ function App() {
   }
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
+    // saveGameStateToLocalStorage({ guesses, solution, solutionUL })
   }, [guesses])
 
   let tiles: string[] = []
@@ -190,7 +194,12 @@ function App() {
       setCurrentGuess(`${currentGuess}${value}`)
     }
   }
-
+   const onReset = () => {
+      setCurrentGuess('')
+      setIsGameWon(false)
+      setIsGameLost(false)
+      setGuesses([])
+  }
   const onDelete = () => {
     setCurrentGuess(
       new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
@@ -244,13 +253,13 @@ function App() {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
 
-      if (winningWord) {
-        setStats(addStatsForCompletedGame(stats, guesses.length))
-        return setIsGameWon(true)
-      }
+      // if (winningWord) {
+      //   setStats(addStatsForCompletedGame(stats, guesses.length))
+      //   return setIsGameWon(true)
+      // }
 
       if (guesses.length === MAX_CHALLENGES - 1) {
-        setStats(addStatsForCompletedGame(stats, guesses.length + 1))
+        // setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
           persist: true,
@@ -280,65 +289,54 @@ axios.post('/api/stats', {
   });
     }
   }, [solution])
-
-  console.log("SOLUTION", solution)
-  console.log("IS GAME WON", isGameWon)
-  console.log("ATTEMPTS", guesses.length)
+console.log("NM- Game Lost: ", isGameLost)
+console.log("NM- Game Won: ", isGameWon)
+// console.log("NM- Game Solution: ", solution)
 
   return (
-    <div className="h-screen flex flex-col">
-      <Navbar
-        setIsInfoModalOpen={setIsInfoModalOpen}
-        setIsStatsModalOpen={setIsStatsModalOpen}
-        setIsSettingsModalOpen={setIsSettingsModalOpen}
-      />
-      <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
-        <div className='grid-space'>
-          <Grid
+    <div>
+      <button onClick={onReset}>RESET</button>
+      <div className="h-screen flex flex-col">
+        <Navbar
+          setIsInfoModalOpen={setIsInfoModalOpen}
+          setIsStatsModalOpen={setIsStatsModalOpen}
+          setIsSettingsModalOpen={setIsSettingsModalOpen}
+        />
+        <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
+          <div className="grid-space">
+            <Grid
+              guesses={guesses}
+              currentGuess={currentGuess}
+              isRevealing={isRevealing}
+              currentRowClassName={currentRowClass}
+            />
+          </div>
+          <Keyboard
+            onChar={onChar}
+            onDelete={onDelete}
+            onEnter={onEnter}
             guesses={guesses}
-            currentGuess={currentGuess}
             isRevealing={isRevealing}
-            currentRowClassName={currentRowClass}
           />
+          <InfoModal
+            isOpen={isInfoModalOpen}
+            handleClose={() => setIsInfoModalOpen(false)}
+          />
+          <SettingsModal
+            isOpen={isSettingsModalOpen}
+            handleClose={() => setIsSettingsModalOpen(false)}
+            isHardMode={isHardMode}
+            handleHardMode={handleHardMode}
+            isDarkMode={isDarkMode}
+            handleDarkMode={handleDarkMode}
+            isHighContrastMode={isHighContrastMode}
+            handleHighContrastMode={handleHighContrastMode}
+          />
+          <AlertContainer />
         </div>
-        <Keyboard
-          onChar={onChar}
-          onDelete={onDelete}
-          onEnter={onEnter}
-          guesses={guesses}
-          isRevealing={isRevealing}
-        />
-        <InfoModal
-          isOpen={isInfoModalOpen}
-          handleClose={() => setIsInfoModalOpen(false)}
-        />
-        <StatsModal
-          isOpen={isStatsModalOpen}
-          handleClose={() => setIsStatsModalOpen(false)}
-          guesses={guesses}
-          gameStats={stats}
-          isGameLost={isGameLost}
-          isGameWon={isGameWon}
-          handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-          isHardMode={isHardMode}
-          isDarkMode={isDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          numberOfGuessesMade={guesses.length}
-        />
-        <SettingsModal
-          isOpen={isSettingsModalOpen}
-          handleClose={() => setIsSettingsModalOpen(false)}
-          isHardMode={isHardMode}
-          handleHardMode={handleHardMode}
-          isDarkMode={isDarkMode}
-          handleDarkMode={handleDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          handleHighContrastMode={handleHighContrastMode}
-        />
-        <AlertContainer />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default Home;
