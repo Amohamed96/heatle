@@ -11,7 +11,7 @@ import {
   NEW_WORD_TEXT,
   SHARE_TEXT,
 } from '../../constants/strings'
-
+ 
 type Props = {
   isOpen: boolean
   handleClose: () => void

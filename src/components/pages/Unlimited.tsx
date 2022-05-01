@@ -312,7 +312,7 @@ const styles = {
   return (
     <div>
       <div className="h-screen flex flex-col">
-       <h1 style={styles.text}>UNLIMITED (BETA)</h1>
+       <h1 style={styles.text}>UNLIMITED</h1>
 
         <NavbarUL
           setIsInfoModalOpen={setIsInfoModalOpen}
