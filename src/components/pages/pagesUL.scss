@@ -11,9 +11,9 @@ body {
 }
 .fireUL {
   font-size: 4px;
-  filter: blur(0.02em);
-  -webkit-filter: blur(0.02em);
-  margin: 28px auto 0 auto;
+  // filter: blur(0.02em);
+  // -webkit-filter: blur(0.02em);
+  margin: 11em auto 0 auto;
   position: inherit;
   width: 77em;
   height: 1em;
@@ -24,7 +24,7 @@ body {
   border-radius: 50%;
   mix-blend-mode: screen;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: $partSize;
   height: $partSize;
