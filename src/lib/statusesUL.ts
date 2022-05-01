@@ -1,5 +1,6 @@
+import React, {useEffect, useState} from 'react';
 import { solutionUL, unicodeSplitUL } from './wordsUnlimited'
-
+import { saveGameStateToLocalStorageUL } from './localStorageUL';
 export type CharStatusUL = 'absent' | 'here' | 'correct' | 'close1' | 'close2' | 'close3' | 'close4' | 'far1' | 'far2' 
 
 function convertLetterToNumber(str:string) {
@@ -139,9 +140,7 @@ export const getGuessStatusesUL = (guess: string): CharStatusUL[] => {
       return
     } 
   })
-
      // Far: 6 - 9 letters
-
     splitGuessUL.forEach((letterUL, i) => {
     if (
     Math.abs(
@@ -158,6 +157,7 @@ export const getGuessStatusesUL = (guess: string): CharStatusUL[] => {
       return
     } 
   })
-   console.log("SPLIT SOLUTION: ", splitSolutionUL)
+  
   return statusesUL
 }
+

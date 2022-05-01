@@ -287,7 +287,46 @@ axios.post('/api/stats', {
 console.log("NM- Game Lost: ", isGameLost)
 console.log("NM- Game Won: ", isGameWon)
 // console.log("NM- Game Solution: ", solution)
+const styles = {
+  button: {
+   width: 300,
+   height: 300,
+   color: "white",
+   backgroundColor: "red",
+   borderRadius: 12,
+   margin: '10px auto',
 
+  },
+  text: {
+    margin: '5px auto',
+    color: "white",
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',  },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly"
+  }
+} as const;
+const linkBox = {
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "cyan",
+  borderRadius: 10, 
+  marginTop: "1rem",
+  marginBottom: "1rem", 
+  justifyContent: "center"
+  }
+ const linkBoxUL = {
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "yellow",
+  borderRadius: 10, 
+  marginTop: "1rem",
+  marginBottom: "1rem", 
+  justifyContent: "center",
+ }
   return (
     <div>
       {" "}
@@ -297,6 +336,15 @@ console.log("NM- Game Won: ", isGameWon)
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
         />
+               <div style={styles.container}>
+
+     <Link style={linkBoxUL} to="/unlimited">
+        <button>UNLIMITED</button>
+      </Link>
+       <Link style={linkBox} to="/">
+        <button>DAILY</button>
+      </Link>
+      </div>
         <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
           <div className="grid-space">
             <Grid

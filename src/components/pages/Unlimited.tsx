@@ -8,6 +8,7 @@ import { SettingsModal } from "../modals/SettingsModal";
 import axios from "axios";
 import { generateEmojiGrid , getEmojiTiles} from '../../lib/share'
 import { Link } from "react-router-dom";
+import { getStatusesUL } from "../../lib/statusesUL";
 import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
@@ -44,15 +45,14 @@ import { AlertContainer } from "../alerts/AlertContainer";
 import { useAlert } from "../../context/AlertContext";
 import { Navbar } from "../navbar/Navbar";
 import { getRandomWord, localeAwareUpperCase } from "../../lib/wordsUnlimited";
+import { solution } from "../../lib/words";
 function Unlimited() {
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches
-
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
   const [currentGuess, setCurrentGuess] = useState('')
-  const [solutionUL, setCurrentSolution] = useState('')
   const [statistic, setStatistics] = useState({heatmap: '', attempts: 0})
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
@@ -82,7 +82,7 @@ function Unlimited() {
     }
     if (loadedUL.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE_UNLIMITED(solutionUL), {
+      showErrorAlert(CORRECT_WORD_MESSAGE_UNLIMITED( loadedUL.solutionUL ), {
         persist: true,
       })
     }
@@ -143,9 +143,6 @@ function Unlimited() {
     setCurrentRowClassUL('')
   }
 
-  useEffect(() => {
-    saveGameStateToLocalStorageUL({ guesses, solutionUL })
-  }, [guesses])
 
   let tiles: string[] = []
   const getEmojiTiles = (isDarkMode: boolean, isHighContrastMode: boolean) => {
@@ -203,8 +200,9 @@ function Unlimited() {
       setIsGameWon(false)
       setIsGameLost(false)
       setGuesses([])
-  }
+      window.location.reload();
 
+  }
   const onEnter = () => {
     if (isGameWon || isGameLost) {
       return
@@ -266,23 +264,69 @@ function Unlimited() {
     }
   }
 
-console.log("UL- Game Lost: ", isGameLost)
-console.log("UL- Game Won: ", isGameWon)
-console.log("UL- Game SolutionUL: ", solutionUL)
-console.log("LOADED UL", loadGameStateFromLocalStorageUL())
 
+  // useEffect(() => {
+  //   saveGameStateToLocalStorageUL({ guesses, solutionUL })
+  // }, [guesses])
+const styles = {
+  button: {
+   width: 300,
+   height: 300,
+   color: "white",
+   backgroundColor: "red",
+   borderRadius: 12,
+   margin: '10px auto',
 
+  },
+  text: {
+    margin: '5px auto',
+    color: "white",
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',  },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly"
+  }
+} as const;
+ const linkBox = {
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "cyan",
+  borderRadius: 10, 
+  marginTop: "1rem",
+  marginBottom: "1rem", 
+  justifyContent: "center"
+  }
+ const linkBoxUL = {
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "yellow",
+  borderRadius: 10, 
+  marginTop: "1rem",
+  marginBottom: "1rem", 
+  justifyContent: "center",
+  }
   return (
     <div>
-      <button onClick={onReset}>RESET</button>
-      {" "}
       <div className="h-screen flex flex-col">
+       <h1 style={styles.text}>UNLIMITED</h1>
+
         <Navbar
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
         />
-        <h1>UNLIMITED</h1>
+       <div style={styles.container}>
+      <Link style={linkBoxUL} to="/unlimited">
+        <button>UNLIMITED</button>
+      </Link>
+       <Link style={linkBox} to="/">
+        <button>DAILY</button>
+      </Link>
+      </div> 
+        <button onClick={onReset} style={styles.button}>RESET</button>
         <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
           <div className="grid-space">
             <GridUL

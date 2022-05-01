@@ -3,7 +3,6 @@ import { VALID_GUESSES } from '../constants/validGuesses'
 import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
 import { getGuessStatusesUL } from './statusesUL'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-
 export const isWordInWordListUL = (word: string) => {
   return (
     WORDS.includes(localeAwareLowerCase(word)) ||
@@ -79,10 +78,10 @@ export const getRandomWord = () => {
   const epochMs = new Date(2022, 0).valueOf()
   const now = Date.now()
   const msInDay = 86400000
-
   return {
     solutionUL: localeAwareUpperCase( WORDS[Math.floor(Math.random() * WORDS.length)]),
+    
   }
-}
 
+}
 export const { solutionUL } = getRandomWord()

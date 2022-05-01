@@ -6,19 +6,11 @@ function App() {
   return (
     <div>
       <Main />
-      <Link to="/">
-        <button>HOME</button>
-      </Link>
-      <div>
-        <Link to="/unlimited">
-          <button>UNLIMITED</button>
-        </Link>
-      </div>
-      <div>
-        <Link to="/challenge">
+      {/* <div> */}
+      {/* <Link to="/challenge">
           <button>CHALLENGE</button>
-        </Link>
-      </div>
+        </Link> */}
+      {/* </div> */}
     </div>
   );
 }
