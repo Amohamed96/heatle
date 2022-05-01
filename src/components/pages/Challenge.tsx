@@ -295,7 +295,7 @@ console.log("NM- Game Won: ", isGameWon)
 
   return (
     <div>
-      <button onClick={onReset}>RESET</button>
+      <button onClick={onReset}>NEW WORD</button>
       <div className="h-screen flex flex-col">
         <Navbar
           setIsInfoModalOpen={setIsInfoModalOpen}
