@@ -43,7 +43,7 @@ import { default as GraphemeSplitter } from "grapheme-splitter";
 import "../../App.css";
 import { AlertContainer } from "../alerts/AlertContainer";
 import { useAlert } from "../../context/AlertContext";
-import { Navbar } from "../navbar/Navbar";
+import { NavbarUL } from "../navbar/NavbarUL";
 import { getRandomWord, localeAwareUpperCase } from "../../lib/wordsUnlimited";
 import { solution } from "../../lib/words";
 function Unlimited() {
@@ -311,9 +311,9 @@ const styles = {
   return (
     <div>
       <div className="h-screen flex flex-col">
-       <h1 style={styles.text}>UNLIMITED</h1>
+       <h1 style={styles.text}>UNLIMITED (BETA)</h1>
 
-        <Navbar
+        <NavbarUL
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
