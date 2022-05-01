@@ -96,15 +96,15 @@ function Unlimited() {
       : false
   )
 
-  useEffect(() => {
-    // if no game state on load,
-    // show the user the how-to info modal
-    if (!loadGameStateFromLocalStorageUL()) {
-      setTimeout(() => {
-        setIsInfoModalOpen(true)
-      }, WELCOME_INFO_MODAL_MS)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // if no game state on load,
+  //   // show the user the how-to info modal
+  //   if (!loadGameStateFromLocalStorageUL()) {
+  //     setTimeout(() => {
+  //       setIsInfoModalOpen(true)
+  //     }, WELCOME_INFO_MODAL_MS)
+  //   }
+  // }, [])
 
   useEffect(() => {
     if (isDarkMode) {
