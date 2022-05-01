@@ -8,8 +8,8 @@ import Unlimited from "./components/pages/Unlimited";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/unlimited" element={<Unlimited />}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/unlimited" element={<Unlimited />} />
       {/* <Route path="/challenge" element={<Challenge />}></Route> */}
     </Routes>
   );
