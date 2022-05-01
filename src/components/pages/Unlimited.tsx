@@ -9,6 +9,9 @@ import axios from "axios";
 import { generateEmojiGrid , getEmojiTiles} from '../../lib/share'
 import { Link } from "react-router-dom";
 import { getStatusesUL } from "../../lib/statusesUL";
+import './pagesUL.scss'
+import FireUL from "./FireUL";
+
 import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
@@ -273,7 +276,7 @@ const styles = {
    width: 300,
    height: 300,
    color: "white",
-   backgroundColor: "red",
+   backgroundColor: " rgb(185 28 28)",
    borderRadius: 12,
    margin: '10px auto',
 
@@ -288,12 +291,16 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center"
+  },
+  btn: {
+    borderTop: "black",
+    borderBlockStart: "revert"
   }
 } as const;
  const linkBox = {
   display: "flex",
   width: "10rem", 
-  backgroundColor: "cyan",
+  backgroundColor: "rgb(45 212 191)",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
@@ -302,29 +309,30 @@ const styles = {
  const linkBoxUL = {
   display: "flex",
   width: "10rem", 
-  backgroundColor: "yellow",
+  backgroundColor: "rgb(250 204 21)",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
   justifyContent: "center",
-  marginRight: "1rem"
+  marginRight: "1rem", 
+  border: "2px",
+  borderColor: "red"
   }
   return (
     <div>
       <div className="h-screen flex flex-col">
-       <h1 style={styles.text}>UNLIMITED</h1>
-
         <NavbarUL
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
         />
+         <FireUL />
        <div style={styles.container}>
       <Link style={linkBoxUL} to="/unlimited">
-        <button>UNLIMITED</button>
+        <button style={styles.btn}>UNLIMITED</button>
       </Link>
        <Link style={linkBox} to="/">
-        <button>DAILY</button>
+        <button >DAILY</button>
       </Link>
       </div> 
         <button onClick={onReset} style={styles.button}>RESET</button>

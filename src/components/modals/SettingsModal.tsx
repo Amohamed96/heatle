@@ -27,30 +27,47 @@ export const SettingsModal = ({
   isHighContrastMode,
   handleHighContrastMode,
 }: Props) => {
-  const linkBox = {
-  width: "5rem", 
-  backgroundColor: "blue",
+const styles = {
+  button: {
+   width: 300,
+   height: 300,
+   color: "white",
+   backgroundColor: " rgb(185 28 28)",
+   borderRadius: 12,
+   margin: '10px auto',
+
+  },
+  text: {
+    margin: '5px auto',
+    color: "white",
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',  },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center"
+  }
+} as const;
+ const linkBox = {
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "rgb(45 212 191)",
   borderRadius: 10, 
   marginTop: "1rem",
-  marginBottom: "1rem"
+  marginBottom: "1rem", 
+  justifyContent: "center"
   }
  const linkBoxUL = {
-  width: "8rem", 
-  backgroundColor: "red",
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "rgb(250 204 21)",
   borderRadius: 10, 
   marginTop: "1rem",
-  marginBottom: "1rem"
+  marginBottom: "1rem", 
+  justifyContent: "center",
+  marginRight: "1rem"
   }
-  const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: 'white', 
-};
-  const linkStyleUL = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: 'white', 
-};
   return (
     <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
       <div className="flex flex-col mt-2 divide-y">
@@ -72,16 +89,15 @@ export const SettingsModal = ({
           description={HIGH_CONTRAST_MODE_DESCRIPTION}
         />
       </div>
-      <div style={linkBoxUL}>      
-        <Link style={linkStyleUL} to="/unlimited">
+      <div style={styles.container}>
+
+     <Link style={linkBoxUL} to="/unlimited">
         <button>UNLIMITED</button>
       </Link>
-      </div>
-     <div style={linkBox}>  
-       <Link style={linkStyle} to="/">
-        <button>HOME</button>
+       <Link style={linkBox} to="/">
+        <button>DAILY</button>
       </Link>
-    </div>
+      </div>
     </BaseModal>
   )
 }

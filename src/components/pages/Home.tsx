@@ -8,6 +8,8 @@ import { SettingsModal } from "../modals/SettingsModal";
 import axios from "axios";
 import { generateEmojiGrid , getEmojiTiles} from '../../lib/share'
 import { Link } from "react-router-dom";
+import './pages.scss'
+import Fire from "./Fire";
 
 import {
   WIN_MESSAGES,
@@ -290,7 +292,7 @@ const styles = {
    width: 300,
    height: 300,
    color: "white",
-   backgroundColor: "red",
+   backgroundColor: " rgb(185 28 28)",
    borderRadius: 12,
    margin: '10px auto',
 
@@ -305,12 +307,16 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center"
+  },
+    btn: {
+    borderTop: "black",
+    borderBlockStart: "revert"
   }
 } as const;
-const linkBox = {
+ const linkBox = {
   display: "flex",
   width: "10rem", 
-  backgroundColor: "cyan",
+  backgroundColor: "rgb(45 212 191)",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
@@ -319,13 +325,13 @@ const linkBox = {
  const linkBoxUL = {
   display: "flex",
   width: "10rem", 
-  backgroundColor: "yellow",
+  backgroundColor: "rgb(250 204 21)",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
   justifyContent: "center",
   marginRight: "1rem"
- }
+  }
   return (
     <div>
       {" "}
@@ -335,13 +341,13 @@ const linkBox = {
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
         />
-               <div style={styles.container}>
-
+        <Fire />
+      <div style={styles.container}>
      <Link style={linkBoxUL} to="/unlimited">
         <button>UNLIMITED</button>
       </Link>
        <Link style={linkBox} to="/">
-        <button>DAILY</button>
+        <button style={styles.btn}>DAILY</button>
       </Link>
       </div>
         <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
