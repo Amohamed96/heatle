@@ -326,7 +326,7 @@ const styles = {
           setIsStatsModalOpen={setIsStatsModalOpen}
           setIsSettingsModalOpen={setIsSettingsModalOpen}
         />
-         <FireUL />
+         {/* <FireUL /> */}
        <div style={styles.container}>
       <Link style={linkBoxUL} to="/unlimited">
         <button style={styles.btn}>UNLIMITED</button>
