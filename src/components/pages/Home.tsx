@@ -270,23 +270,21 @@ function Home() {
 //   });
 //     }
 // }
-  useEffect(() => {
-    if (isGameWon || isGameLost) {
-axios.post('/api/stats', {
-    heatmap: heatmap,
-    attempts: guesses.length
-  })
-  .then(function (response) {
-    console.log("RESPONSE", response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-    }
-  }, [solution])
-console.log("NM- Game Lost: ", isGameLost)
-console.log("NM- Game Won: ", isGameWon)
-// console.log("NM- Game Solution: ", solution)
+//   useEffect(() => {
+//     if (isGameWon || isGameLost) {
+// axios.post('/api/stats', {
+//     heatmap: heatmap,
+//     attempts: guesses.length
+//   })
+//   .then(function (response) {
+//     console.log("RESPONSE", response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+//     }
+//   }, [solution])
+
 const styles = {
   button: {
    width: 300,
@@ -306,7 +304,7 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly"
+    justifyContent: "center"
   }
 } as const;
 const linkBox = {
@@ -326,6 +324,7 @@ const linkBox = {
   marginTop: "1rem",
   marginBottom: "1rem", 
   justifyContent: "center",
+  marginRight: "1rem"
  }
   return (
     <div>

@@ -287,7 +287,7 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly"
+    justifyContent: "center"
   }
 } as const;
  const linkBox = {
@@ -307,6 +307,7 @@ const styles = {
   marginTop: "1rem",
   marginBottom: "1rem", 
   justifyContent: "center",
+  marginRight: "1rem"
   }
   return (
     <div>
