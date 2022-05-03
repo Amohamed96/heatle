@@ -273,8 +273,8 @@ function Unlimited() {
   // }, [guesses])
 const styles = {
   button: {
-   width: 300,
-   height: 300,
+   width: "10em",
+   height: "3rem",
    color: "white",
    backgroundColor: " rgb(185 28 28)",
    borderRadius: 12,
@@ -283,7 +283,6 @@ const styles = {
   },
   text: {
     margin: '5px auto',
-    color: "white",
     flexDirection: "row",
     justifyContent: 'center',
     alignItems: 'center',  },
@@ -291,32 +290,53 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center"
-  },
-  btn: {
-    borderTop: "black",
-    borderBlockStart: "revert"
   }
+
 } as const;
  const linkBox = {
+  color: "white",
   display: "flex",
   width: "10rem", 
-  backgroundColor: "rgb(45 212 191)",
+  backgroundColor: "#475568",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
-  justifyContent: "center"
-  }
- const linkBoxUL = {
-  display: "flex",
-  width: "10rem", 
-  backgroundColor: "rgb(250 204 21)",
-  borderRadius: 10, 
-  marginTop: "1rem",
-  marginBottom: "1rem", 
+  marginLeft: "1rem",
   justifyContent: "center",
   marginRight: "1rem", 
-  border: "2px",
-  borderColor: "red"
+  alignItems: "center"
+  }
+ const linkBoxUL = {
+      color: "white",
+  display: "flex",
+  width: "10rem", 
+  backgroundColor: "#475568",
+  borderRadius: 10, 
+  marginTop: "1rem",
+  marginBottom: "1rem", 
+  marginLeft: "1rem",
+  justifyContent: "center",
+  marginRight: "1rem", 
+  borderTop: "5px",
+  borderColor: "red",
+  borderStyle: "solid"
+
+    //   display: flex;
+    // margin-left: 1rem;
+    // width: 10rem;
+    // background-color: rgb(250, 204, 21);
+    // border-radius: 10px;
+    // margin-top: 1rem;
+    // margin-bottom: 1rem;
+    // justify-content: center;
+    // margin-right: 1rem;
+    // border-top: 5px solid red;
+    // border-right-color: red;
+    // border-bottom-color: red;
+    // border-left-color: red;
+    // border-right-style: solid;
+    // border-bottom-style: solid;
+    // border-left-style: solid;
   }
   return (
     <div>
@@ -329,13 +349,15 @@ const styles = {
          {/* <FireUL /> */}
        <div style={styles.container}>
       <Link style={linkBoxUL} to="/unlimited">
-        <button style={styles.btn}>UNLIMITED</button>
+        <button>UNLIMITED</button>
       </Link>
+       <button onClick={onReset} style={linkBox}>      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+</svg></button>
        <Link style={linkBox} to="/">
         <button >DAILY</button>
       </Link>
       </div> 
-        <button onClick={onReset} style={styles.button}>NEW WORD</button>
         <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
           <div className="grid-space">
             <GridUL

@@ -1,8 +1,9 @@
 html.dark {
   background-color: rgb(15, 23, 42);
 }
+
 .grid-space {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 .ho-ch {

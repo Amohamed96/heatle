@@ -307,30 +307,36 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center"
-  },
-    btn: {
-    borderTop: "black",
-    borderBlockStart: "revert"
   }
 } as const;
  const linkBox = {
+     color: "white",
+
   display: "flex",
   width: "10rem", 
-  backgroundColor: "rgb(45 212 191)",
+  backgroundColor: "#475568",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
-  justifyContent: "center"
+  marginLeft: "1rem",
+  justifyContent: "center",
+  marginRight: "1rem", 
+  borderTop: "5px",
+  borderColor: "red",
+  borderStyle: "solid"
   }
  const linkBoxUL = {
+     color: "white",
+
   display: "flex",
   width: "10rem", 
-  backgroundColor: "rgb(250 204 21)",
+  backgroundColor: "#475568",
   borderRadius: 10, 
   marginTop: "1rem",
   marginBottom: "1rem", 
+  marginLeft: "1rem",
   justifyContent: "center",
-  marginRight: "1rem"
+  marginRight: "1rem", 
   }
   return (
     <div>
@@ -347,7 +353,7 @@ const styles = {
         <button>UNLIMITED</button>
       </Link>
        <Link style={linkBox} to="/">
-        <button style={styles.btn}>DAILY</button>
+        <button>DAILY</button>
       </Link>
       </div>
         <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
