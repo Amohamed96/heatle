@@ -272,6 +272,9 @@ function Unlimited() {
   //   saveGameStateToLocalStorageUL({ guesses, solutionUL })
   // }, [guesses])
 const styles = {
+  main: {
+    height: "82vh"
+  },
   button: {
    width: "10em",
    height: "3rem",
@@ -340,7 +343,7 @@ const styles = {
   }
   return (
     <div>
-      <div className="h-screen flex flex-col">
+      <div className="h-screen flex flex-col" style={styles.main}>
         <NavbarUL
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}

@@ -288,6 +288,9 @@ function Home() {
 //   }, [solution])
 
 const styles = {
+  main: {
+    height: "82vh"
+  },
   button: {
    width: 300,
    height: 300,
@@ -310,8 +313,7 @@ const styles = {
   }
 } as const;
  const linkBox = {
-     color: "white",
-
+  color: "white",
   display: "flex",
   width: "10rem", 
   backgroundColor: "#475568",
@@ -341,7 +343,7 @@ const styles = {
   return (
     <div>
       {" "}
-      <div className="h-screen flex flex-col">
+      <div className="h-screen flex flex-col" style={styles.main}>
         <Navbar
           setIsInfoModalOpen={setIsInfoModalOpen}
           setIsStatsModalOpen={setIsStatsModalOpen}
