@@ -20,7 +20,7 @@ export const CellUL = ({
 }: Props) => {
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
-  const animationDelay = `${(position + 1) * REVEAL_TIME_MS}ms`
+  const animationDelay = `${position * REVEAL_TIME_MS}ms`
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(

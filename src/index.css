@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --animation-speed: 1000ms;
+  /* --animation-speed: 1000ms; */
   --animation-speed-fast: 250ms;
   --default-cell-bg-color: theme("colors.white");
   --default-cell-border-color: theme("colors.black");
@@ -32,9 +32,10 @@
 
 .cell-reveal {
   animation-name: revealCharCell;
-  animation-duration: 0.55s;
+  /* animation-duration: 0.9s; */
   animation-timing-function: linear;
   animation-fill-mode: backwards;
+  /* animation: cubic-bezier(1, 0, 0, 1) 0.7s linear; */
 }
 
 svg.cursor-pointer {
