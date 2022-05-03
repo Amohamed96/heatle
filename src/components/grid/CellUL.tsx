@@ -20,7 +20,7 @@ export const CellUL = ({
 }: Props) => {
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
-  const animationDelay = `${position * REVEAL_TIME_MS}ms`
+  const animationDelay = `${(position + 1) * REVEAL_TIME_MS}ms`
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(
@@ -32,7 +32,7 @@ export const CellUL = ({
       'absent shadowed bg-slate-400 dark:bg-slate-700 text-white border-slate-400 dark:border-slate-700':
         status === 'absent',
       'correct shadowed bg-green-500 text-white border-white-500':
-        status === 'correct' && isHighContrast,
+        status === 'correct' && isHighContrast, 
       'correct shadowed bg-green-500 text-white border-green-500':
         status === 'correct' && !isHighContrast,
       'here shadowed bg-yellow-500 text-white border-white-500':
@@ -61,16 +61,16 @@ export const CellUL = ({
         status === 'far1' && !isHighContrast,
       'far2 shadowed bg-cyan-300 text-white border-white-500':
         status === 'far2' && isHighContrast,
-      'far2 shadowed bg-cyan-300 text-white border-cyan-500':
+      'far2 shadowed bg-cyan-300 text-white border-cyan-300':
         status === 'far2' && !isHighContrast,
       'cell-fill-animation': isFilled,
-      'cell-reveal': shouldReveal,
+      'cell-reveal': shouldReveal, 
     }
   )
 
   return (
-    <div className={classes}>
-      <div className="letter-container" >
+    <div className={classes} style={{ animationDelay }} >
+      <div className="letter-container">
         {value}
       </div>
     </div>

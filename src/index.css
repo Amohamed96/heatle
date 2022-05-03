@@ -4,7 +4,7 @@
 
 :root {
   --animation-speed: 1000ms;
-  --animation-speed-fast: 2500ms;
+  --animation-speed-fast: 250ms;
   --default-cell-bg-color: theme("colors.white");
   --default-cell-border-color: theme("colors.black");
   --default-cell-text-color: theme("colors.black");
@@ -26,47 +26,15 @@
 }
 
 .cell-fill-animation {
-  animation-timing-function: linear;
   animation: onTypeCell linear;
-  animation-duration: 0.55s;
+  animation-duration: 0.35s;
 }
 
 .cell-reveal {
-  animation-duration: 0.95s;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-}
-
-/* .cell-reveal.absent {
-  animation-name: revealAbsentCharCell;
-}
-
-.cell-reveal.correct {
-  animation-name: revealCorrectCharCell;
-}
-
-.cell-reveal.close1 {
-  animation-name: revealPresentCharCell;
-}
-.cell-reveal.close2 {
-  animation-name: revealPresentCharCell;
-}
-.cell-reveal.close3 {
-  animation-name: revealPresentCharCell;
-}
-.cell-reveal.close4 {
-  animation-name: revealPresentCharCell;
-}
-.cell-reveal.far1 {
-  animation-name: revealPresentCharCell;
-}
-.cell-reveal.far2 {
-  animation-name: revealPresentCharCell;
-} */
-
-.cell-reveal > .letter-container {
-  animation: offsetLetterFlip 0.35s linear;
-  animation-fill-mode: forwards;
+  animation-name: revealCharCell;
+  animation-duration: 0.55s;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
 }
 
 svg.cursor-pointer {
@@ -83,7 +51,7 @@ svg.cursor-pointer:hover {
 }
 
 .navbar {
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 
 .navbar-content {
@@ -96,57 +64,36 @@ svg.cursor-pointer:hover {
 .right-icons {
   display: flex;
 }
-/* 
-@keyframes revealCorrectCharCell {
-  100% {
+
+@keyframes revealCharCell {
+  0% {
     transform: rotateX(0deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  100% {
+  50% {
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  0.1% {
+  50.1% {
     background-color: var(--correct-cell-bg-color);
     border-color: var(--correct-cell-bg-color);
   }
   100% {
-    transform: scale(1);
+    transform: rotateX(180deg);
   }
 }
-
-@keyframes revealPresentCharCell {
-  100% {
-    transform: rotateX(0deg);
-    background-color: var(--default-cell-bg-color);
-    border-color: var(--default-cell-border-color);
-    color: var(--default-cell-text-color);
-  }
-  100% {
-    background-color: var(--default-cell-bg-color);
-    border-color: var(--default-cell-border-color);
-    color: var(--default-cell-text-color);
-  }
-  100% {
-    background-color: var(--present-cell-bg-color);
-    border-color: var(--present-cell-bg-color);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
 
 /* Additional animation on the child div to avoid letters turning upside down/snapping back to upright visual glitch */
 @keyframes offsetLetterFlip {
   0% {
     transform: rotateX(0deg);
   }
-  /* 100% {
+  100% {
     transform: rotateX(180deg);
-  } */
+  }
 }
 
 @keyframes onTypeCell {
@@ -183,11 +130,4 @@ svg.cursor-pointer:hover {
   100% {
     transform: translate(0, 0);
   }
-}
-
-img {
-  padding-top: 4rem;
-  padding-left: 1.5rem;
-  max-width: 50%;
-  height: auto;
 }
