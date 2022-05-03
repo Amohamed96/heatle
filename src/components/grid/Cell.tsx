@@ -69,7 +69,7 @@ export const Cell = ({
   )
 
   return (
-    <div className={classes}>
+    <div className={classes} style={{ animationDelay }} >
       <div className="letter-container" >
         {value}
       </div>
