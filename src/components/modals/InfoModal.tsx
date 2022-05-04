@@ -10,7 +10,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
+        Heatle is a word game inspired by Wordle where you guess the word in 6 tries. After each guess, the color of the tiles will
         change to show how close the letter was to the correct letter for that given spot. 
       </p> 
 <div className="flex justify-center mb-1 mt-4">
